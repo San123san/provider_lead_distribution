@@ -11,6 +11,6 @@ This folder contains the Mongoose schemas. These models act as the strict bluepr
 * **What it is:** Records the data submitted by customers requesting services.
 * **Important Logic:** It contains an `assignedProviders` array storing ObjectIds. This creates a relational link indicating exactly which 3 providers received the lead. 
 
-### 3. `webhookLog.models.js` (Idempotency Tracker)
+### 3. `webhookLog.model.js` (Idempotency Tracker)
 * **What it is:** Logs the "Transaction IDs" of incoming webhook payment requests.
 * **Benefits:** This is the core pillar of our Idempotency implementation. If a `transactionId` already exists in this collection, the database will reject duplicate processing, ensuring provider quotas are not accidentally reset multiple times for the same payment.
